@@ -6,8 +6,8 @@ package gorilla
 import (
 	"net/http"
 
-	gcontext "github.com/gorilla/context"
 	"context"
+	gcontext "github.com/gorilla/context"
 )
 
 // NewContext возвращает Context чей метод Value возвращает значения, связанные

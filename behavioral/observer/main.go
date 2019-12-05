@@ -36,11 +36,11 @@ type (
 )
 
 type (
-	eventObserver struct{
+	eventObserver struct {
 		id int
 	}
 
-	eventNotifier struct{
+	eventNotifier struct {
 		// Использование map с пустой структурой позволяет сохранять уникальность слушателей,
 		// расходуя при этом относительно мало памяти.
 		observers map[Observer]struct{}
@@ -80,7 +80,7 @@ func main() {
 	tick := time.NewTicker(time.Second).C
 	for {
 		select {
-		case <- stop:
+		case <-stop:
 			return
 		case t := <-tick:
 			n.Notify(Event{Data: t.UnixNano()})
